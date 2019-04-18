@@ -10,6 +10,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     // firstItem passes the first item of the given array to the callback function.
   }
 
+
   // Potential Solution:
 
   // Higher order function using "cb" as the call back
@@ -23,11 +24,24 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   });
 
 */
+const newForEach = (list, callBack) => {
+    for(let i=0; i < list.length; i++) {
+        callBack(list[i], i);
+    }
+};
 
+newForEach(items, function(item, index){
+    console.log(item, index);
+});
 
-function getLength(arr, cb) {
+function getLength(items, cb) {
+    cb(items.length);
   // getLength passes the length of the array into the callback.
 }
+
+getLength(items, (firstItem) => {
+    console.log(firstItem);
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
