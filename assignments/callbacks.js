@@ -24,15 +24,6 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   });
 
 */
-const newForEach = (list, callBack) => {
-    for(let i=0; i < list.length; i++) {
-        callBack(list[i], i);
-    }
-};
-
-newForEach(items, function(item, index){
-    console.log(item, index);
-});
 
 function getLength(items, cb) {
     cb(items.length);
