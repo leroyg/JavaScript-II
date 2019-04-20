@@ -30,6 +30,10 @@ function getLength(items, cb) {
     // getLength passes the length of the array into the callback.
 };
 
+getLength(items, (allOfIt) => {
+    console.log(allOfIt);
+});
+
 function firstItem(arr, cb) {
     return cb(arr[0]);
 }
@@ -39,7 +43,7 @@ firstItem(items, (first) => {
 });
 
 function lastItem(arr, cb) {
-    return cb(arr[3]);
+    return cb(arr[arr.length-1]);
 }
 
 lastItem(items, (last) => {
@@ -65,11 +69,15 @@ multiplyNums(100, 342, (product) => {
 });
 
 function contains(item, list, cb) {
-    if (item is in list)
+    return cb(list.includes(item));
+    // if (item is in list);
     // contains checks if an item is present inside of the given array/list.
     // Pass true to the callback if it is, otherwise pass false.
 }
 
+contains('Pencil',items,(check) => {
+    console.log(check);
+});
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
