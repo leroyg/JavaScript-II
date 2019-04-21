@@ -58,9 +58,9 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullName = []; 
     runners.forEach(allNames => {
     let name = allNames.first_name +` `+ allNames.last_name;
-    fullName.push(allNames);
+    fullName.push(name);
 });
-// console.log(fullName);
+console.log(fullName);
 
 // var array1 = ['a', 'b', 'c'];
 
@@ -75,7 +75,7 @@ let fullName = [];
 let allCaps = [runners.map((name, index, data) =>{
     return {'name':name.first_name.toUpperCase()};
 })];
-// console.log(allCaps);
+console.log(allCaps);
 
 //const mappedCityStates = data.map((state, index, data) => {
 //     return {'city': state.city, 'state': state.state};
@@ -127,7 +127,22 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//We want to give an award to all the companies that had participants - let's find all the companies who'll get an award. 
+let companyName = []; 
+    runners.forEach(coNames => {
+    let co_name = coNames.company_name;
+    companyName.push(co_name);
+});
+companyName.sort();
+console.log(companyName);
 
-// Problem 2
+/// Problem 2 We want to know which company had the most runners!
+/// ***JB -- Could I use .forEach here also below?????***
+let counting = {};
+for (let i = 0; i < companyName.length; i++) {
+    counting[companyName[i]] = 1 + (counting[companyName[i]] || 0);
+}
+
+console.log(counting);
 
 // Problem 3

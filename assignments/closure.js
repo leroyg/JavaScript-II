@@ -3,10 +3,9 @@
 
 function higherEducation(){
     const university= "University of the Ozarks"
-    console.log(university); 
+    console.log(university);
 };
-higherEducation();
-console.log(higherEducation());
+
 // closure is the inner having access to the variables on the outer scope
 
 // Lexical: Where are you from? Where were you born, where were you defined?
